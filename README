@@ -4,5 +4,7 @@ Wouldn't be much of a web app group without one.
 
 Built using Ruby 1.9.2 and Rails 3.
 
+I recommend using RVM and installing ruby-1.9.2-head for a development environment.
+
 
 
