@@ -7,11 +7,7 @@ require 'rails/all'
 Bundler.require(:default, Rails.env) if defined?(Bundler)
 
 module Bwag
-  class Application < Rails::Application
-    # Settings in config/environments/* take precedence over those specified here.
-    # Application configuration should go into files in config/initializers
-    # -- all .rb files in that directory are automatically loaded.
-
+  class Application < Rails::Application    
     # Add additional load paths for your own custom dirs
     # config.load_paths += %W( #{config.root}/extras )
 
