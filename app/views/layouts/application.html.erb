@@ -1,14 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Bwag</title>
-  <%= stylesheet_link_tag :all %>
+  <meta charset="utf-8" />
+  <title>Burlington Web Application Group</title>
+  <%= stylesheet_link_tag 'compiled/screen.css', :media => 'screen, projection' -%>
+  <%= stylesheet_link_tag 'compiled/print.css', :media => 'print' -%>
+  <!--[if IE]>
+    <%= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection' -%>
+  <![endif]-->
+  
   <%= javascript_include_tag :defaults %>
   <%= csrf_meta_tag %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div id="site">
+    <header role="banner">
+      <a href="/"><img src="" alt="Burlington Web Application Group"></a>
+      <nav>
+        <ul>
+          <li></li>
+        </ul>
+      </nav>
+    </header>
+    <div id="main">
+      <%= yield %>
+    </div>
+    <aside>
+      <%= yield :aside %>
+    </aside>
+    <footer>
+      <p>Content and Code &copy; Copyright 2010 Burlington Web Application Group.</p>
+      <p>Site code avialable on Github under the MIT license. Hosting by Heroku.</p>
+    </footer>
+  </div>
 </body>
 </html>
