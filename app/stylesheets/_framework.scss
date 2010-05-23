@@ -1,0 +1,79 @@
+
+body {
+  background-color: $bright_blue;
+}
+
+#site {
+  @include container;
+  @include box-shadow(#333,1px,1px,5px);
+  background-color: #eee;
+  margin-top: 1em;
+  padding-top: 1em;
+}
+
+header[role=banner] {
+  @include full;
+
+  #logo {
+    @include columns(6);
+  }
+
+  #login {
+    @include columns(6);
+    @include omega;
+    @include no-style-list;
+
+    li {
+      @include columns(3);
+      float: right;
+      text-align: right;
+
+      &:first {
+        @include omega;
+      }
+
+      &:last {
+      }
+    }
+  }
+
+}
+
+nav {
+  @include full;
+  @include alpha;
+  @include clearfix;
+
+  ul {
+    @include full;
+    @include no-style-list;
+
+    li {
+      @include columns(1);
+
+      &:last {
+        @include omega;
+      }
+    }
+  }
+}
+
+#main {
+  clear: both;
+  @include columns(8);
+  @include alpha;
+  margin-top: 1em;
+}
+
+aside {
+  @include columns(4);
+  @include omega;
+}
+
+footer {
+  @include full;
+  p {
+    text-align: center;
+    font-size: .75em;
+  }
+}
