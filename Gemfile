@@ -9,7 +9,7 @@ gem 'ruby-mysql'
 
 # Authlogic w/ OpenID support. 
 gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-gem 'authlogic-oid', :require => 'authlogic_openid'
+#gem 'authlogic-oid', :git => 'git://github.com/mreinsch/authlogic_openid.git', :require => 'authlogic_openid'
 gem 'ruby-openid', :require => 'openid'
 gem 'rack-openid', '>=0.2.1', :require => 'rack/openid'
 
