@@ -1,0 +1,42 @@
+<% semantic_form_for @user do |f| %>
+  <% f.inputs "Member Details" do %>
+    <%= f.input :first %>
+    <%= f.input :last %>
+    <%= f.input :email, :hint => "Will never be sold, shared, or traded." %>
+  <% end %>
+  <% f.inputs "OpenID Login" do %>
+    <ul class="providers"> 
+      <li class="openid" title="OpenID">
+        <img src="/images/open_id_providers/openidW.png" alt="icon" /> 
+        <span><strong>http://{your-openid-url}</strong></span>
+      </li> 
+      <li class="direct" title="Google"> 
+		    <img src="/images/open_id_providers/googleW.png" alt="icon" />
+        <span>https://www.google.com/accounts/o8/id</span>
+      </li> 
+      <li class="username" title="Facebook">
+        <img src="/images/open_id_providers/facebookW.png" alt="icon" />
+        <span>http://facebook.com/<strong>username</strong>/</span>
+      </li>
+      <li class="direct" title="Yahoo"> 
+		    <img src="/images/open_id_providers/yahooW.png" alt="icon" />
+        <span>http://yahoo.com/</span>
+      </li> 
+      <li class="username" title="AOL screen name"> 
+		    <img src="/images/open_id_providers/aolW.png" alt="icon" />
+        <span>http://openid.aol.com/<strong>username</strong></span>
+      </li> 
+      <li class="username" title="MyOpenID user name"> 
+		    <img src="/images/open_id_providers/myopenidW.png" alt="icon" />
+        <span>http://<strong>username</strong>.myopenid.com/</span>
+      </li> 
+      <li class="username" title="Flickr user name"> 
+		    <img src="/images/open_id_providers/flickrW.png" alt="icon" />
+        <span>http://flickr.com/<strong>username</strong>/</span>
+      </li> 
+    </ul>
+    <%#= f.input :openid_username %>
+    <%= f.input :openid_identifier, :label => "OpenID URL" %>
+  <% end %>
+  <%= f.buttons %>
+<% end %>

@@ -9,7 +9,8 @@
     <%= stylesheet_link_tag 'compiled/ie.css', :media => 'screen, projection' -%>
   <![endif]-->
   
-  <%#= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "jquery-1.4.2.min", "jquery.openid", :cache => :jquery %>
+  <%= javascript_include_tag "openid", :cache => :application %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -17,8 +18,13 @@
     <header role="banner">
       <a href="/" id="logo"><img src="" alt="Burlington Web Application Group"></a>
       <ul id="login">
-        <li><a href="">Register</a></li>
-        <li><a href="">Sign In</a></li>
+        <% if current_user %>
+          <li><%= link_to "Sign Out", sign_out_path %></li>
+          <li><%= link_to "Edit Profile", "edit_user_path(current_user)" %></li>
+        <% else %>
+          <li><%= link_to "Sign In", sign_in_path %></li>
+          <li><%= link_to "Sign Up", sign_up_path %></li>
+        <% end %>
       </ul>
     </header>
     <nav>

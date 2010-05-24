@@ -12,7 +12,8 @@
 ActiveRecord::Schema.define(:version => 20100523024501) do
 
   create_table "users", :force => true do |t|
-    t.string   "login"
+    t.string   "first"
+    t.string   "last"
     t.string   "email"
     t.string   "openid_identifier"
     t.string   "crypted_password"
