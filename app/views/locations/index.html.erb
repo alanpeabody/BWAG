@@ -1,0 +1,31 @@
+<h1>Locations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <td>Name</td>
+      <td>Address</td>
+      <td>Description</td>
+      <td>Options</td>
+    </tr>
+  </thead>
+  <tbody>
+    <% @locations.each do |location|%>
+      <tr>
+        <td><%= link_to location.name, location %></td>
+        <td>
+          <address>
+            <%= "#{h(location.address1)} <br/>".html_safe %>
+            <%= "#{h(location.address2)} <br/>".html_safe unless location.address2.blank? %>
+            <%= "#{location.city}, #{location.state}"%>
+          </address>
+        </td>
+        <td><%= location.description %></td>
+        <td>
+          <%= "#{link_to('edit',edit_location_path(location))} <br/>".html_safe %>
+          <%= link_to('delete',location_path(location), :method => :delete) %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
