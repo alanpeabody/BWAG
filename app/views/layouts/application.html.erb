@@ -17,24 +17,28 @@
   <div id="site">
     <header role="banner">
       <a href="/" id="logo"><img src="/images/bwag-logo.png" alt="Burlington Web Application Group"></a>
+      <nav>
+        <ul>
+          <li><%= link_to 'Events', events_path %></li>
+          <li><%= link_to 'Members', users_path %></li>
+          <li><a href=''>Forums</a></li>
+          <li><a href=''>Reviews</a></li>
+          
+          <% if current_user %>
+            <li class='session_management'><%= link_to 'Sign Out', sign_out_path %></li>
+            <li class='session_management'> class='session_management'<%= link_to 'Edit Profile', "edit_user_path(current_user)" %></li>
+          <% else %>
+            <li class='session_management'><%= link_to 'Sign In', sign_in_path %></li>
+            <li class='session_management'><%= link_to 'Sign Up', sign_up_path %></li>
+          <% end %>
+        </ul>
+      </nav>
+      
       <ul id="login">
-        <% if current_user %>
-          <li><%= link_to "Sign Out", sign_out_path %></li>
-          <li><%= link_to "Edit Profile", "edit_user_path(current_user)" %></li>
-        <% else %>
-          <li><%= link_to "Sign In", sign_in_path %></li>
-          <li><%= link_to "Sign Up", sign_up_path %></li>
-        <% end %>
+
       </ul>
     </header>
-    <nav>
-      <ul>
-        <li>Events</li>
-        <li>Members</li>
-        <li>Forums</li>
-        <li>Reviews</li>
-      </ul>
-    </nav>
+    
     <div id="main">
       <%= yield %>
     </div>
@@ -42,8 +46,8 @@
       <%= yield :aside %>
     </aside>
     <footer>
-      <p>Content and Code &copy; Copyright 2010 Burlington Web Application Group.</p>
-      <p>Site code avialable on Github under the MIT license. Hosting by Heroku.</p>
+      <p>Site code avialable on <a href='http://github.com/alanpeabody/BWAG'>Github</a> under the <a href='http://creativecommons.org/licenses/MIT/'>MIT License</a>. Cloud Hosting by <a href='http://heroku.com/'>Heroku</a>.</p>
+      <p>Copyright 2010 Burlington Web Application Group.</p>
     </footer>
   </div>
 </body>

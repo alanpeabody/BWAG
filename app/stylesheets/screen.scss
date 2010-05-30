@@ -2,4 +2,6 @@
 @import "compass/reset.sass"; // Resets
 @import "compass/css3";
 @import "base.scss"; // Grid setup, colors, fonts, and other susy setup options.
+@import "formtastic_base.sass"; // Formtastic Sass
 @import "framework.scss"; // Structural setup of the layout/site.
+@import "forms.scss"; // Implimentation of the Formtastic Sass.

@@ -8,7 +8,7 @@ body {
   @include box-shadow(#333,1px,1px,5px);
   background-color: #eee;
   margin-top: 1em;
-  padding-top: 1em;
+  padding-top: 0em;
   margin-bottom: 1em;
   padding-bottom: 1em;
 }
@@ -16,60 +16,67 @@ body {
 header[role=banner] {
   @include full;
   @include clearfix;
-  margin-bottom: 1em;
+  padding-top: 1em;
 
   #logo {
-    @include columns(6);
+  @include columns(2);
 
     img {
     }
   }
 
-  #login {
-    @include columns(6);
-    @include omega;
-    @include no-style-list;
-
-    li {
-      @include columns(3);
-      float: right;
-      text-align: right;
-
-      &:first {
-        @include omega;
-      }
-
-      &:last {
+  nav {
+    @include columns(10);
+    @include clearfix;
+    margin-top: 1.5em;
+    
+    ul {
+      @include full;
+      @include no-style-list;
+      @include clearfix;
+      
+      li {
+        display: block;
+        height: auto;
+        width: auto;
+        float: left;
+        
+        &.session_management {
+          float: right;
+          
+          a {
+            color: $green;
+            padding: .25em 1em;
+            margin-right: 0;
+          }
+        }
+        
+        a {
+          diplay: block;
+          text-align: center;
+          width: 100%;
+          padding: .25em 1.5em;
+          margin-right: .5em;
+          text-decoration: none;
+          color: $periwinkle;
+          text-transform: lowercase;
+          @include text-shadow;
+          @include border-radius(5px);
+          
+          &:hover {
+            @include box-shadow(#ccc,1px,1px,5px);
+          }
+        }
       }
     }
   }
-
 }
 
-nav {
-  @include full;
-  @include alpha;
-  @include clearfix;
-
-  ul {
-    @include full;
-    @include no-style-list;
-
-    li {
-      @include columns(1);
-
-      &:last {
-        @include omega;
-      }
-    }
-  }
-}
 
 #main {
   clear: both;
   @include columns(8);
   @include alpha;
-  margin-top: 1em;
 }
 
 aside {
@@ -79,8 +86,11 @@ aside {
 
 footer {
   @include full;
+  margin-top: 1em;
   p {
     text-align: center;
     font-size: .75em;
+    margin: 0em;
+    padding: .25em;
   }
 }
