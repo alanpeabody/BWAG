@@ -1,3 +1,36 @@
 .formtastic {
   @include stack-form;
+  
+  li {
+    
+    input,
+    select,
+    textarea {
+      width: 50%;
+      background-repeat: no-repeat;
+      background-position: 0 50%;
+    }
+    
+    .error {
+      input {
+        background-image: url('/images/error.png');
+      }
+    }
+    
+    .valid {
+      input {
+        background-image: url('/images/valid.png');
+      }
+    }
+    
+    ul.errors {
+      color: #f00;
+      margin: .5em 0em 1em 3em;
+      font-size: .75em;
+      li {
+        padding: .2em;
+      }
+    }
+  }
+
 }

@@ -1,32 +1,45 @@
 <h1>Burlington Web Application Group</h1>
-	       
-<p>Celebrating beer, the cloud, geeky talk and the death of the desktop app in the spirt of a barcamp.</p>
+<p>Celebrating beer, the cloud, geeky talk and the death of the desktop app in the spirt of a barcamp.</p>       
 
-<h2>What b.wag Is</h2>
-	       
-<ul>
-  <li>For designers</li>
-  <li>For developers</li>
-  <li>For discussing current projects</li>
-  <li>For getting advice</li>
-  <li>For discussing the hotest new web applications</li>
-  <li>For demoing new projects</li>
-  <li>Web based applications</li>
-  <li>HTML, CSS, Javascript, PHP, Ruby, Java, .NET, Python &amp; More</li>
-  <li>For enjoying beer</li>
-</ul>
+<% if @upcoming_event %>
+  <h2>Upcoming Event: <%= @upcoming_event.name %></h2>
 
-<h2>What b.wag Isn't</h2>
+  <%= "#{@upcoming_event.date} at #{@upcoming_event.time}" %>
 
-<ul>
-  <li>For marketing folks</li>
-  <li>For finding business oportunities</li>
-  <li>Presentations</li>
-  <li>Slides</li>
-  <li>Desktop Applications</li>
-  <li>Mobile 'Apps'</li>
-</ul>
+  <div class="description">
+    <%= @upcoming_event.description %>
+  </div>
+<% end %>
+
+<% if @previous_event.name %>
+  <h2>Last Event: <%= @previous_event.name %></h2>
+
+<% end %>
+
 
 <% content_for :aside do %>
-  <p>I am an aside!</p>
+  <h2>What b.wag Is</h2>
+  
+  <ul>
+    <li>For designers</li>
+    <li>For developers</li>
+    <li>For discussing current projects</li>
+    <li>For getting advice</li>
+    <li>For discussing the hotest new web applications</li>
+    <li>For demoing new projects</li>
+    <li>Web based applications</li>
+    <li>HTML, CSS, Javascript, PHP, Ruby, Java, .NET, Python &amp; More</li>
+    <li>For enjoying beer</li>
+  </ul>
+  
+  <h2>What b.wag Isn't</h2>
+  
+  <ul>
+    <li>For marketing folks</li>
+    <li>For finding business oportunities</li>
+    <li>Presentations</li>
+    <li>Slides</li>
+    <li>Desktop Applications</li>
+    <li>Mobile 'Apps'</li>
+  </ul>
 <% end %>

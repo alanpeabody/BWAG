@@ -72,6 +72,27 @@ header[role=banner] {
   }
 }
 
+div.flash {
+  @include full;
+  padding: 1em;
+  margin-bottom: 1em;
+  font-weight: bold;
+  @include text-shadow(#999, 0px, -1px, 0px);
+  
+  &.alert {
+    @include linear-gradient(color-stops(#fff, #c33));
+    @include box-shadow(#ccc,1px,1px,5px);
+    @include border-radius(5px);
+    color: #fff;
+  }
+  &.notice {
+    @include linear-gradient(color-stops(#fff, $green));
+    @include box-shadow(#ccc,1px,1px,5px);
+    @include border-radius(5px);
+    color: #fff;
+  }
+}
+
 
 #main {
   clear: both;
@@ -82,6 +103,7 @@ header[role=banner] {
 aside {
   @include columns(4);
   @include omega;
+  font-size: .9em;
 }
 
 footer {

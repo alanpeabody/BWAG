@@ -7,7 +7,8 @@ $(document).ready(function(){
       message: 'must match password'
     }
   });
-  
+
+  $("div.flash").fadeOut(5000);
   
 });
 
