@@ -1,3 +1,28 @@
+.formtastic ul#openid_providers {
+  @include no-style-list;
+  li {
+    @include columns(3);
+    padding: .5em;
+    text-align: center;
+    
+    img {
+      border: 3px solid #eee;
+      @include border-radius(10px);
+      
+      &:hover {
+        cursor: pointer;
+        border-color: $bright_blue;
+      }
+    }
+    
+    span {
+      display: none;
+    }
+  }
+
+}
+
+
 .formtastic {
   @include stack-form;
   
@@ -9,6 +34,12 @@
       width: 50%;
       background-repeat: no-repeat;
       background-position: 0 50%;
+    }
+    
+    p.inline-hints {
+      color: #999;
+      font-size: .7em;
+      margin: .5em 0 .5em 3.5em;
     }
     
     .error {
@@ -24,13 +55,13 @@
     }
     
     ul.errors {
+      @include no-style-list;
       color: #f00;
       margin: .5em 0em 1em 3em;
-      font-size: .75em;
+      font-size: .7em;
       li {
-        padding: .2em;
+        padding: .5em;
       }
     }
   }
-
 }

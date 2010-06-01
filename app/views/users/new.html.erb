@@ -1,41 +1,41 @@
+<h1>Join b.wag</h1>
+
 <% semantic_form_for @user do |f| %>
-  <% f.inputs "Member Details" do %>
-    <%= f.input :first %>
-    <%= f.input :last %>
-    <%= f.input :email, :hint => "Will never be sold, shared, or traded." %>
+  <% # logger.debug(@user.errors.to_yaml) %>
+  <% if !@user.errors.empty? %>
+    <% f.inputs "Member Details" do %>
+      <%= f.input :username %>
+      <%= f.input :email, :hint => "Will never be sold, shared, or traded." %>
+    <% end %>
   <% end %>
   <% f.inputs "OpenID Login" do %>
-    <ul class="providers"> 
-      <li class="openid" title="OpenID">
-        <img src="/images/open_id_providers/openidW.png" alt="icon" /> 
-        <span><strong>http://{your-openid-url}</strong></span>
-      </li> 
-      <li class="direct" title="Google"> 
-		    <img src="/images/open_id_providers/googleW.png" alt="icon" />
-        <span>https://www.google.com/accounts/o8/id</span>
-      </li> 
-      <li class="username" title="Facebook">
-        <img src="/images/open_id_providers/facebookW.png" alt="icon" />
-        <span>http://facebook.com/<strong>username</strong>/</span>
-      </li>
-      <li class="direct" title="Yahoo"> 
-		    <img src="/images/open_id_providers/yahooW.png" alt="icon" />
-        <span>http://yahoo.com/</span>
-      </li> 
-      <li class="username" title="AOL screen name"> 
-		    <img src="/images/open_id_providers/aolW.png" alt="icon" />
-        <span>http://openid.aol.com/<strong>username</strong></span>
-      </li> 
-      <li class="username" title="MyOpenID user name"> 
-		    <img src="/images/open_id_providers/myopenidW.png" alt="icon" />
-        <span>http://<strong>username</strong>.myopenid.com/</span>
-      </li> 
-      <li class="username" title="Flickr user name"> 
-		    <img src="/images/open_id_providers/flickrW.png" alt="icon" />
-        <span>http://flickr.com/<strong>username</strong>/</span>
-      </li> 
-    </ul>
-    <%#= f.input :openid_username %>
+    <p>Choose the Open ID service you would like to log in with.</p>
+    <li>
+      <ul id="openid_providers"> 
+        <li class="openid" title="OpenID" data-uri="http://{your-openid-url}">
+          <img src="/images/open_id_providers/openidW.png" alt="icon" />
+        </li> 
+        <li class="direct" title="Google" data-uri="https://www.google.com/accounts/o8/id"> 
+          <img src="/images/open_id_providers/googleW.png" alt="icon" />
+        </li> 
+        <li class="direct" title="Yahoo" data-uri="http://yahoo.com/"> 
+          <img src="/images/open_id_providers/yahooW.png" alt="icon" />
+        </li> 
+        <li class="username" title="Facebook username" data-uri="http://facebook.com/username/">
+          <img src="/images/open_id_providers/facebookW.png" alt="icon" />
+        </li>
+        <li class="username" title="AOL screen name" data-uri="http://openid.aol.com/username"> 
+          <img src="/images/open_id_providers/aolW.png" alt="icon" />
+        </li>
+        <li class="username" title="MyOpenID user name" data-uri="http://username.myopenid.com/"> 
+          <img src="/images/open_id_providers/myopenidW.png" alt="icon" />
+        </li> 
+        <li class="username" title="Flickr user name" data-uri="http://flickr.com/username/"> 
+          <img src="/images/open_id_providers/flickrW.png" alt="icon" />
+        </li> 
+      </ul>
+    </li>
+    <%= f.input :openid_username, :label => "Provider Username" %>
     <%= f.input :openid_identifier, :label => "OpenID URL" %>
   <% end %>
   <%= f.buttons %>

@@ -35,12 +35,9 @@ ActiveRecord::Schema.define(:version => 20100529165123) do
   end
 
   create_table "users", :force => true do |t|
-    t.string   "first"
-    t.string   "last"
+    t.string   "username"
     t.string   "email"
     t.string   "openid_identifier"
-    t.string   "crypted_password"
-    t.string   "password_salt"
     t.string   "persistence_token"
     t.string   "single_access_token"
     t.string   "perishable_token"
