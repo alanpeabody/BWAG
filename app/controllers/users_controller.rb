@@ -8,8 +8,9 @@ class UsersController < ApplicationController
   end
 
   def update  
-    @user = current_user  
+    @user = current_user
     @user.attributes = params[:user]  
+    #save in block because that is how authlogic must be done.
     @user.save do |result|  
       if result  
         flash[:notice] = "Successfully updated profile."  
