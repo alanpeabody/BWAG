@@ -1,10 +1,10 @@
-== Burlington Web Application Group web application
+== Burlington Web Application Group Web Application
 
 Wouldn't be much of a web app group without one.
 
-Built using Ruby 1.9.2 and Rails 3.
+Built using Ruby 1.9.2, Rails 3, and Mongo DB.
 
-I recommend using RVM and installing ruby-1.9.2-head for a development environment.
+I recommend using RVM and installing ruby-1.9.2 for a development environment.
 
 
 

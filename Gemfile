@@ -1,20 +1,19 @@
 source 'http://rubygems.org'
 
+gem 'rails', '3.0.0'
 
-gem 'rails',  '3.0.0'
+#mongodb
+gem "mongoid", "2.0.0.beta.18"
+gem "bson_ext", "1.0.4"
 
-gem 'ruby-mysql'
+# Use unicorn as the web server
+gem 'unicorn'
 
-# Authlogic w/ OpenID support. 
-gem 'authlogic', :git => 'git://github.com/odorcicd/authlogic.git', :branch => 'rails3'
-
-#gem 'authlogic-oid', :git => 'git://github.com/mreinsch/authlogic_openid.git', :require => 'authlogic_openid'
-gem 'ruby-openid', :require => 'openid'
-gem 'rack-openid', '>=0.2.1', :require => 'rack/openid'
-
-# Compass for uber quick, uber beautiful css with the elasticy susy framework.
+# Compass/Susy
 gem 'compass'
-gem 'compass-susy-plugin', :require => 'susy'
+gem 'compass-susy-plugin'
 
-# Formtastic currently using Rails 3 branch until rails 3 is merged into master.
-gem 'formtastic'
+group :test, :development do
+  gem "rspec-rails", ">= 2.0.0.beta.22"
+  gem 'factory_girl_rails'
+end
