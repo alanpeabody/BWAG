@@ -13,6 +13,9 @@ gem 'unicorn'
 gem 'compass'
 gem 'compass-susy-plugin'
 
+# Formtastic
+gem 'formtastic', '~> 1.1.0'
+
 group :test, :development do
   gem "rspec-rails", ">= 2.0.0.beta.22"
   gem 'factory_girl_rails'
