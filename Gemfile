@@ -16,6 +16,9 @@ gem 'compass-susy-plugin'
 # Formtastic
 gem 'formtastic', '~> 1.1.0'
 
+# Devise (authentication)
+gem 'devise'
+
 group :test, :development do
   gem "rspec-rails", ">= 2.0.0.beta.22"
   gem 'factory_girl_rails'
