@@ -1,6 +1,6 @@
 Bwag::Application.routes.draw do
-  resource :events
-  resource :users
+  resources :events
+  resources :users
 
   root :to => "home#index"
 end
