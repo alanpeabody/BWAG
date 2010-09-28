@@ -45,7 +45,7 @@ module Bwag
     config.filter_parameters += [:password]
     
     config.generators do |g|
-      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
+#      g.fixture_replacement :factory_girl, :dir => 'spec/factories'
     end
   end
 end

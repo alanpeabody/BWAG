@@ -27,8 +27,8 @@
             <li class='session_management'><%= link_to 'Sign Out', sign_out_path %></li>
             <li class='session_management'><%= link_to 'Edit Profile', edit_user_path(current_user) %></li>
           <% else %>
-            <li class='session_management'><%= link_to 'Sign In', sign_in_path %></li>
-            <li class='session_management'><%= link_to 'Sign Up', sign_up_path %></li>
+            <li class='session_management'><%= link_to 'Sign In', '#' %></li>
+            <li class='session_management'><%= link_to 'Sign Up', '#' %></li>
           <% end %>
         </ul>
       </nav>
