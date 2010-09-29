@@ -19,6 +19,9 @@ gem 'formtastic', '~> 1.1.0'
 # Devise (authentication)
 gem 'devise'
 
+# jQuery Rails!
+gem "jquery-rails"
+
 group :test, :development do
   gem "rspec-rails", ">= 2.0.0.beta.22"
   gem 'factory_girl_rails'
