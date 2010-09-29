@@ -1,4 +1,10 @@
 <% semantic_form_for @location do |f| %>
-  <%= f.inputs -%>
+  <% f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :address1 %>
+    <%= f.input :address2 %>
+    <%= f.input :city %>
+    <%= f.input :state %>
+  <% end %>
   <%= f.buttons -%>
 <% end %>

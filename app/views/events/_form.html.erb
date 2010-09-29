@@ -1,7 +1,8 @@
 <% semantic_form_for @event do |f| %>
   <% f.inputs do %>
     <%= f.input :name %>
-    <%= f.input :date, :as => :datetime %>
+    <%= f.input :date %>
+    <%= f.input :location %>
   <% end %>
   <%= f.buttons -%>
 <% end %>

@@ -11,4 +11,6 @@ class Event
 
   scope :upcoming, where(:date.gt => DateTime.now)
   scope :previous, where(:date.lt => DateTime.now)
+
+  referenced_in :location 
 end
